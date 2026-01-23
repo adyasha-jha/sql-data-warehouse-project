@@ -1,97 +1,105 @@
-# 📊 Data Warehouse & Analytics Project
+# Data Warehouse and Analytics Project
 
-## 🚀 Overview
-This repository presents an **Data Warehouse and Analytics project** designed to demonstrate practical skills in **data engineering, SQL development, and data analytics**.
+Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
+This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights.
+---
+## 🏗️ Data Architecture
 
-The project focuses on transforming raw data from multiple source systems into a **clean, structured data warehouse**, followed by **SQL-based analysis** to generate actionable business insights.  
+The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
+![Data Architecture](docs/data_architecture.png)
+
+1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+
+---
+## 📖 Project Overview
+
+This project involves:
+
+1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
+2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
+3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
+4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+
+
+## 🛠️ Important Links & Tools:
+- **[Datasets](datasets/):** Access to the project dataset (csv files).
+- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting the SQL database.
+- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
+- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
+- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
 
 ---
 
-## 🧱 Project Architecture
-1. **Data Sources**
-   - ERP system data (CSV)
-   - CRM system data (CSV)
+## 🚀 Project Requirements
 
-2. **Data Engineering Layer**
-   - Data cleaning and validation
-   - Data transformation
-   - Data integration into a unified schema
+### Building the Data Warehouse (Data Engineering)
 
-3. **Data Warehouse**
-   - Built using Microsoft SQL Server
-   - Star schema design (Fact & Dimension tables)
-   - Optimized for analytical queries
+#### Objective
+Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
 
-4. **Analytics & Reporting**
-   - SQL-based analytics
-   - Business-focused metrics and trends
+#### Specifications
+- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
+- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
+- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
+- **Scope**: Focus on the latest dataset only; historization of data is not required.
+- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
 ---
 
-## 🛠️ Tools & Technologies
-- **Database:** Microsoft SQL Server  
-- **Query Language:** SQL  
-- **Data Modeling:** Star Schema  
-- **Data Format:** CSV  
+### BI: Analytics & Reporting (Data Analysis)
 
----
-
-## 🏗️ Building the Data Warehouse (Data Engineering)
-
-### 🎯 Objective
-To design and implement a **modern data warehouse** that consolidates sales-related data from multiple sources, enabling efficient reporting and analytics.
-
-### 📌 Key Features
-- **Multiple Data Sources**  
-  Ingest and merge ERP and CRM datasets.
-
-- **Data Quality Handling**  
-  - Remove duplicates  
-  - Handle missing values  
-  - Standardize data formats  
-
-- **Data Integration**  
-  Combine data into a single, user-friendly analytical model.
-
-- **Scope**  
-  - Focus on the latest available data  
-  - No historical snapshot tracking  
-
-- **Documentation**  
-  Clear schema and table documentation to support analysts and stakeholders.
-
----
-
-## 📈 BI Analytics & Reporting (Data Analytics)
-
-### 🎯 Objective
-To generate **actionable business insights** using SQL queries on top of the data warehouse.
-
-### 🔍 Key Analysis Areas
+#### Objective
+Develop SQL-based analytics to deliver detailed insights into:
 - **Customer Behavior**
-  - Purchase patterns  
-  - Customer segmentation  
-
 - **Product Performance**
-  - Best-selling products  
-  - Revenue contribution  
-
 - **Sales Trends**
-  - Monthly and yearly trends  
-  - Regional performance  
 
-These insights support **data-driven decision-making**.
+These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
 
----
+For more details, refer to [docs/requirements.md](docs/requirements.md).
 
 ## 📂 Repository Structure
-```text
-├── data/                # Raw CSV source files
-├── sql/
-│   ├── staging/         # Data cleaning & transformation scripts
-│   ├── warehouse/       # Fact & Dimension table creation
-│   └── analytics/       # Business analytics queries
-├── docs/                # Data model & project documentation
-└── README.md
+```
+data-warehouse-project/
+│
+├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+│
+├── docs/                               # Project documentation and architecture details
+│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
+│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
+│   ├── data_models.drawio              # Draw.io file for data models (star schema)
+│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+│
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Scripts for extracting and loading raw data
+│   ├── silver/                         # Scripts for cleaning and transforming data
+│   ├── gold/                           # Scripts for creating analytical models
+│
+├── tests/                              # Test scripts and quality files
+│
+├── README.md                           # Project overview and instructions
+├── LICENSE                             # License information for the repository
+├── .gitignore                          # Files and directories to be ignored by Git
+└── requirements.txt                    # Dependencies and requirements for the project
+```
+---
 
- 
+## 🛡️ License
+
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
+
+## 🌟 About Me
+
+Hi there! 👋 I’m Adyasha Jha, an aspiring Data Analyst curious about data, patterns, and problem-solving.
+Currently learning, experimenting, and building projects to turn data into impactful stories 🚀
+
+
+## ☕ Stay Connected
+
+Let's stay in touch! Feel free to connect with me on the following platforms:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adyasha-jha/)
